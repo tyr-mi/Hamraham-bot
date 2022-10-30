@@ -15,14 +15,14 @@ updater = Updater("5583347821:AAHrlqHXfyIMJ880PRqFUvX-b8WXh6jt6-k",
 def get_db_connection():
     connection = sqlite3.connect("src" + os.sep + "Hafez.db")
     return connection
-    
+
 def start(update: Update, context: CallbackContext):
     connection = get_db_connection()
     selected_poem = random.randint(0,415)
     query = "SELECT TEXT FROM poems WHERE id = " + str(selected_poem)
     cur = connection.cursor()
     cur.execute(query)
-    poem = cur.fetchall()
+    poem = cur.fetchone()
     print(poem)
     update.message.reply_text(poem)
 
