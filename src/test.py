@@ -14,7 +14,7 @@ def start():
     query = "SELECT TEXT FROM poems WHERE id = " + str(selected_poem)
     cur = connection.cursor()
     cur.execute(query)
-    poem = cur.fetchall()
+    poem = cur.fetchone()[0]
     print(poem)
 
 start()

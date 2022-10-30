@@ -22,7 +22,7 @@ def start(update: Update, context: CallbackContext):
     query = "SELECT TEXT FROM poems WHERE id = " + str(selected_poem)
     cur = connection.cursor()
     cur.execute(query)
-    poem = cur.fetchone()
+    poem = cur.fetchone()[0]
     print(poem)
     update.message.reply_text(poem)
 
