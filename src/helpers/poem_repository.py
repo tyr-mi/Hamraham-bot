@@ -13,4 +13,5 @@ class PoemRepository:
     def retrieve_poem(self):
         self.shuffle()
         selected_poem = random.randint(1,495)
-        return self.poems[selected_poem]
+        poem = self.poems[selected_poem][0]
+        return poem
