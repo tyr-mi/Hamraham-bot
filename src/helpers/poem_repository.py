@@ -12,6 +12,6 @@ class PoemRepository:
         return shuffeled_array
 
     def retrieve_poem(self):
-        shuffeled_arr = shuffeled_arr()
+        shuffeled_arr = self.shuffle()
         selected_poem = random.randint(1,495)
-        return shuffeled_arr(selected_poem)
+        return shuffeled_arr[selected_poem]
