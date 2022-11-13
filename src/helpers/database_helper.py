@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 def get_db_connection():
-    connection = sqlite3.connect("src" + os.sep + "Hafez.db")
+    connection = sqlite3.connect("/home/admin/Hamraham-bot/src" + os.sep + "Hafez.db")
     return connection
 
 def get_all_poems():
