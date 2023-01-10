@@ -1,0 +1,15 @@
+[Unit]
+Description = Hafez telegram bot service 
+After = network.target
+
+[Service]
+Type = simple
+ExecStart = /home/admin/Hamraham-bot/venv/bin/python /home/admin/Hamraham-bot/src/bot_handler.py
+User = root
+Restart = on-failure
+SyslogIdentifier = HamrahamBot
+RestartSec = 5
+TimeoutStartSec = infinity
+
+[Install]
+WantedBy= multi-user.target
